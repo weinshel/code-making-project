@@ -10,7 +10,8 @@ fs.readFile('secret/in.txt', 'utf8', function(err, input) {
                 fs.readFile('secret/concat2.txt', 'utf8', function(err, concat2) {
                     const encrypted = encryptText(input, dict, key, concat1, concat2);
 
-                    fs.writeFile("out/encrypted.txt", encrypted, error); 
+                    // fs.writeFile("out/encrypted.txt", encrypted, error); 
+                    console.log(encrypted);
                 });
             });
         });
