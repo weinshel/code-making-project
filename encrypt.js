@@ -2,22 +2,6 @@ const fs = require('fs');
 
 const MonoAlphabeticCipher = require('text-ciphers').MonoAlphabeticCipher;
 
-// file reading stuff
-fs.readFile('secret/in.txt', 'utf8', function(err, input) {  
-    fs.readFile('secret/dict.txt', 'utf8', function(err, dict) {
-        fs.readFile('secret/key.txt', 'utf8', function(err, key) {
-            fs.readFile('secret/concat1.txt', 'utf8', function(err, concat1) {
-                fs.readFile('secret/concat2.txt', 'utf8', function(err, concat2) {
-                    const encrypted = encryptText(input, dict, key, concat1, concat2);
-
-                    // fs.writeFile("out/encrypted.txt", encrypted, error); 
-                    console.log(encrypted);
-                });
-            });
-        });
-    });
-});
-
 function error(err) {
     if (err) throw err;
 }
@@ -25,9 +9,15 @@ function error(err) {
 function encryptText(text, dict, key, concat1, concat2) {
 
     text = cleanText(text);
+    if (text === "") {
+        return "";
+    }
 
     // split into words
     let split = text.split(' ');
+    if (split.length < 1) {
+        return "";
+    }
 
     // replace the with one of the others
     const thes = ["the1", "the2", "the3", "the4"];
@@ -94,3 +84,5 @@ function cleanText(text) {
         .replace("—", ' ')
         .toLowerCase();
 }
+
+module.exports = encryptText;
