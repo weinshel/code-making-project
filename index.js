@@ -13,7 +13,8 @@ let count = 0;
 let limit_time = null;
 
 var fields = forms.fields,
-    validators = forms.validators;
+    validators = forms.validators,
+    widgets = forms.widgets;
 
 // template for the example page
 var template = jsontemplate.Template(
@@ -22,7 +23,7 @@ var template = jsontemplate.Template(
 
 // our example registration form
 var reg_form = forms.create({
-    text: fields.string({ required: true })
+    text: fields.string({ required: true, widget: widgets.textarea() })
 });
 
 http.createServer(function (req, res) {
