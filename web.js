@@ -4,8 +4,8 @@ var http = require('http'),
     util = require('util'),
     fs = require('fs'),
     forms = require('forms'),
-    jsontemplate = require('./json-template'),
-    encryptText = require('./encrypt.js');
+    jsontemplate = require('./lib/json-template'),
+    encryptText = require('./encrypt');
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +18,7 @@ var fields = forms.fields,
 
 // template for the example page
 var template = jsontemplate.Template(
-    fs.readFileSync(__dirname + '/page.jsont').toString()
+    fs.readFileSync(__dirname + '/lib.jsont').toString()
 );
 
 // our example registration form

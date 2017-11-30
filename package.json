@@ -4,6 +4,7 @@
     "text-ciphers": "^0.5.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node web.js",
+    "cli": "node cli.js"
   }
 }
