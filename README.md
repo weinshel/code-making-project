@@ -1,17 +1,16 @@
-# Group Projects in Cryptography and Cryptananalysis
+# Code Making Project
 
-- Caleb Bacos
-- Manasvi Sagarkar
-- Clare Ulmer
-- Ben Weinshel
+Group Project in Cryptography and Cryptananalysis for LING 26040 Fall 2017. We designed an algorithm to encipher a passage, and then other groups in the classed were challenged with breaking our code.
+
+Code written by Ben Weinshel, cipher algorithm designed by Caleb Bacos, Manasvi Sagarkar, Clare Ulmer and Ben Weinshel.
 
 # Running the code
 
-## Installing Dependencies
+## Installing dependencies
 
-You will need [node.js](http://nodejs.org/) installed.
+You will need [node.js](http://nodejs.org/) installed. Then run `npm install` to install dependencies.
 
-## Secret Files
+## Secret files
 
 You will need 4 files that encompass the keys in order to run the code:
 
@@ -20,10 +19,18 @@ You will need 4 files that encompass the keys in order to run the code:
 - `secret/dict.txt` contains some words
 - `secret/key.txt` contains some type of key
 
-## Running 
+## Command-line version
 
 ```
-node encrypt.js
+$ node cli.js
 ```
 
-Generates `out/encrypted.txt` with the encrypted text.
+Prints encrypted text given input files in proper locations.
+
+## Web version
+
+```
+$ node web.js
+```
+
+Runs rudimentary web interface that lets you input plaintext and produces ciphertext. By default uses `http://localhost:3000`.
